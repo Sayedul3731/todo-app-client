@@ -34,6 +34,9 @@ const Navbar = () => {
                             <li className="nav-item">
                                 <a className="nav-link" href="task-management" style={{ color: "white" }}>Task Management</a>
                             </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#benefited" style={{ color: "white" }}>Who Can Benefited?</a>
+                            </li>
                         </ul>
                         {
                             user ? <p onClick={handleLogOut} className="navbar-text" style={{ color: "white", textDecoration: "none" }}>Logout</p> : <Link to="login" className="navbar-text" style={{ color: "white", textDecoration: "none" }}>

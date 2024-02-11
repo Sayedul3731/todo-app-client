@@ -4,6 +4,7 @@ import Home from "../page/home/Home";
 import Login from "../page/login/Login";
 import Register from "../page/register/Register";
 import TaskManagement from "../page/taskManagement/TaskManagement";
+import PrivetRoutes from "./PrivetRoutes";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -23,7 +24,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "task-management",
-                element: <TaskManagement></TaskManagement>
+                element: <PrivetRoutes><TaskManagement></TaskManagement></PrivetRoutes>
             }
         ]
     },

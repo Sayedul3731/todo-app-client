@@ -72,7 +72,7 @@ const Login = () => {
         <div className='bg-warning'>
             <div className=' py-5 px-5' style={{ maxWidth: "500px", marginRight: "auto", marginLeft: "auto", minHeight: "600px" }}>
                 <h1 className=''>Please Login!</h1>
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(onSubmit)} className='pt-5'>
                     <p>
                         <input className=' px-3 py-1 mt-3 col-md-12 col-lg-12 col-xl-12' placeholder='Your Email' {...register('email', { required: true })} />
                     </p>
@@ -82,14 +82,14 @@ const Login = () => {
                         </p>
                     </div>
                     <div className=' text-center'>
-                        <input  type="submit" />
+                        <input  type="submit" className='btn btn-primary' />
                     </div>
                 </form>
                 <p className='mt-6 text-center'>Don't Have An Account? Please <Link to="/Register"><span className=' font-semibold '>Register</span></Link> </p>
 
-                <div onClick={handleLogInWithGoogle} className='mt-3' style={{display: "flex", gap: "5px", textAlign: "center", justifyContent: "center", cursor: "pointer"}}>
+                <div onClick={handleLogInWithGoogle} className='mt-3 pt-3 shadow-lg' style={{display: "flex", gap: "5px", textAlign: "center", justifyContent: "center", cursor: "pointer", }}>
                     <span className=''><FcGoogle></FcGoogle></span>
-                    <p>Sign In With Google</p>
+                    <p style={{fontWeight: "bold"}}>Sign In With Google</p>
                 </div>
             </div>
         </div>

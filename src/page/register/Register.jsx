@@ -90,7 +90,7 @@ const Register = () => {
         <div className='bg-warning'>
             <div className=' py-5 px-5' style={{ maxWidth: "500px", marginRight: "auto", marginLeft: "auto", minHeight: "600px" }}>
                 <h1 className=''>Please Register!</h1>
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(onSubmit)} className='pt-3'>
                     <p>
                         <input type='text' className='px-3 py-1 mt-3 col-md-12 col-lg-12 col-xl-12' placeholder='Your Name' {...register('name', { required: true })} />
                     </p>
@@ -121,14 +121,14 @@ const Register = () => {
                         }
                     </div>
                     <div className=' text-center'>
-                        <input type="submit" />
+                        <input type="submit" className='btn btn-primary' />
                     </div>
                 </form>
-                <p className='mt-6 text-center'>Already Have An Account? Please <Link to="/login"><span className=' font-semibold '>Login</span></Link> </p>
+                <p className='mt-6 text-center'>Already Have An Account? Please <Link to="/login"><span >Login</span></Link> </p>
 
-                <div onClick={handleLogInWithGoogle} className='mt-3' style={{ display: "flex", gap: "5px", textAlign: "center", justifyContent: "center", cursor: "pointer" }}>
+                <div onClick={handleLogInWithGoogle} className='mt-3 shadow-lg pt-3' style={{ display: "flex", gap: "5px", textAlign: "center", justifyContent: "center", cursor: "pointer" }}>
                     <span className=''><FcGoogle></FcGoogle></span>
-                    <p>Sign In With Google</p>
+                    <p style={{fontWeight: "bold"}}>Sign In With Google</p>
                 </div>
             </div>
         </div>

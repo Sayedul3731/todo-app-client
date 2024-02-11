@@ -1,9 +1,12 @@
+import Banner from "../../components/Banner";
+import Benefit from "../../components/Benefit";
 
 
 const Home = () => {
     return (
         <div>
-            This is Home
+            <Banner></Banner>
+            <Benefit></Benefit>
         </div>
     );
 };

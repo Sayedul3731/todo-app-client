@@ -21,8 +21,7 @@ const TaskManagement = () => {
             title: data?.title,
             description: data?.description,
             createdDate: data?.createdDate,
-            quality: data?.quality,
-            image: data?.photoURL,
+            priority: data?.priority,
             status: data?.status
         }
         axiosPublic.post('/todos', newInfo)
@@ -42,7 +41,7 @@ const TaskManagement = () => {
         <div className="bg-warning mt-32">
         <div className="my-10" style={{maxWidth: "1280px", marginLeft: "auto", marginRight: "auto"}}>
             <div className="py-5  text-center" style={{minHeight: "600px"}}>
-                <h1 className="mb-5 text-">Create New TODO here!</h1>
+                <h1 className="mb-5 text-">Create New TODO Here!</h1>
                 <form onSubmit={handleSubmit(handleNewTodos)} className="mx-4  col-md-12 col-lg-12 col-xl-12 ">
                     <p>
                         <input type='text' className={`${inputWith} px-3 py-1`} placeholder='Title' {...register('title', { required: true })} />
@@ -51,13 +50,10 @@ const TaskManagement = () => {
                         <input type='text' className={`${inputWith} px-3 py-1`} placeholder='Description' {...register('description', { required: true })} />
                     </p>
                     <p>
-                        <input type='text' className={`${inputWith} px-3 py-1`} placeholder='Project photoURL' {...register('photoURL', { required: false })} />
-                    </p>
-                    <p>
                         <input type='date' className={`${inputWith} px-3 py-1`} placeholder='CreatedDate' {...register('createdDate', { required: true })} />
                     </p>
                     <p>
-                        <input type='text' className={`${inputWith} px-3 py-1`} placeholder='good/better/best' {...register('quality', { required: true })} />
+                        <input type='text' className={`${inputWith} px-3 py-1`} placeholder='low/medium/high' {...register('priority', { required: true })} />
                     </p>
                     <p>
                         <input type='text' className={`${inputWith} px-3 py-1`} placeholder='completed/incomplete' {...register('status', { required: true })} />
@@ -65,8 +61,8 @@ const TaskManagement = () => {
                     {/* <p>
                         <input type='text' className={`${inputWith} px-3 py-1`} placeholder='Total time (second)' {...register('time', { required: true })} />
                     </p> */}
-                    <div className=" flex justify-center">
-                        <input type="submit" className="bg-primary px-10 font-semibold text-white py-[8px] text-lg" />
+                    <div>
+                        <input type="submit" className="btn btn-primary text-white " />
                     </div>
                 </form>
             </div>
