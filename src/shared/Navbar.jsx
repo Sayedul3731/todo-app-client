@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./style.css"
 
 const Navbar = () => {
@@ -17,9 +18,9 @@ const Navbar = () => {
                                 <a className="nav-link" href="task-management" style={{ color: "white" }}>Task Management</a>
                             </li>
                         </ul>
-                        <span className="navbar-text" style={{ color: "white" }}>
+                        <Link to="login" className="navbar-text" style={{ color: "white", textDecoration: "none" }}>
                             Login
-                        </span>
+                        </Link>
                     </div>
                 </div>
             </nav>
