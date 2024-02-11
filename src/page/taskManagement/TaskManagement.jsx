@@ -1,12 +1,38 @@
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../../provider/AuthProvider";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import Swal from "sweetalert2";
 
 
 const TaskManagement = () => {
-    
+    const { user } = useContext(AuthContext);
+    const axiosPublic = useAxiosPublic();
     const { register, handleSubmit } = useForm();
     const inputWith = "col-md-10 col-lg-10 col-xl-8 "
     const handleNewProject = (data) => {
         console.log(data);
+        const newInfo = {
+            userEmail: user?.email,
+            title: data?.title,
+            description: data?.description,
+            createdDate: data?.createdDate,
+            quality: data?.quality,
+            image: data?.photoURL,
+            status: data?.status
+        }
+        axiosPublic.post('/todos', newInfo)
+            .then(res => {
+                console.log(res.data);
+                if (res.data.insertedId) {
+                    Swal.fire({
+                        title: "Success!",
+                        text: "Project Created Successfully.",
+                        icon: "success"
+                    });
+                    // refetch()
+                }
+            })
     }
     return (
         <div className="bg-warning mt-32">
@@ -32,9 +58,9 @@ const TaskManagement = () => {
                     <p>
                         <input type='text' className={`${inputWith} px-3 py-1`} placeholder='completed/incomplete' {...register('status', { required: true })} />
                     </p>
-                    <p>
+                    {/* <p>
                         <input type='text' className={`${inputWith} px-3 py-1`} placeholder='Total time (second)' {...register('time', { required: true })} />
-                    </p>
+                    </p> */}
                     <div className=" flex justify-center">
                         <input type="submit" className="bg-primary px-10 font-semibold text-white py-[8px] text-lg" />
                     </div>

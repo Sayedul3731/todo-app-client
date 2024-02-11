@@ -78,7 +78,7 @@ const Login = () => {
                     </p>
                     <div>
                         <p>
-                            <input className='col-md-12 col-lg-12 col-xl-12 px-3 py-1' placeholder='Your Password' {...register('password', { required: true })} />
+                            <input type='password' className='col-md-12 col-lg-12 col-xl-12 px-3 py-1' placeholder='Your Password' {...register('password', { required: true })} />
                         </p>
                     </div>
                     <div className=' text-center'>

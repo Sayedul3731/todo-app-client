@@ -38,7 +38,6 @@ const Register = () => {
                             const userInfo = {
                                 name: data.name,
                                 email: data.email,
-                                Badge: "Bronze"
                             }
                             axiosPublic.post('/users', userInfo)
                                 .then(res => {
@@ -74,7 +73,6 @@ const Register = () => {
                     const userInfo = {
                         name: result.user?.displayName,
                         email: result.user?.email,
-                        Badge: "Bronze"
                     }
                     axiosPublic.post('/users', userInfo)
                         .then(res => {
@@ -111,15 +109,15 @@ const Register = () => {
                                 pattern: /(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{6}/
                             })} />
                         </p>
-                        {errors.password?.type === 'required' && <p className='text-red-600'>Password is required</p>}
+                        {errors.password?.type === 'required' && <p style={{color: "red"}}>Password is required</p>}
                         {
-                            errors.password?.type === 'minLength' && <p className='text-red-600'>Password must be 6 characters</p>
+                            errors.password?.type === 'minLength' && <p style={{color: "red"}}>Password must be 6 characters</p>
                         }
                         {
-                            errors.password?.type === 'maxLength' && <p className='text-red-600'>Password must be less than 20 characters</p>
+                            errors.password?.type === 'maxLength' && <p style={{color: "red"}}>Password must be less than 20 characters</p>
                         }
                         {
-                            errors.password?.type === 'pattern' && <p className='text-red-600'>Password must have one capital letter, one special character, one digit and one small letter</p>
+                            errors.password?.type === 'pattern' && <p style={{color: "red"}}>Password must have one capital letter, one special character, one digit and one small letter</p>
                         }
                     </div>
                     <div className=' text-center'>

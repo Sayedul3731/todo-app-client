@@ -1,7 +1,24 @@
 import { Link } from "react-router-dom";
 import "./style.css"
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
+    const { user,logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Log out successfully!",
+                    showConfirmButton: false,
+                    timer: 1000
+                });
+            })
+            .catch()
+    }
     return (
         <div className="bg-primary">
             <nav className="navbar navbar-expand-lg navbar-light">
@@ -18,9 +35,11 @@ const Navbar = () => {
                                 <a className="nav-link" href="task-management" style={{ color: "white" }}>Task Management</a>
                             </li>
                         </ul>
-                        <Link to="login" className="navbar-text" style={{ color: "white", textDecoration: "none" }}>
+                        {
+                            user ? <p onClick={handleLogOut} className="navbar-text" style={{ color: "white", textDecoration: "none" }}>Logout</p> : <Link to="login" className="navbar-text" style={{ color: "white", textDecoration: "none" }}>
                             Login
                         </Link>
+                        }
                     </div>
                 </div>
             </nav>
