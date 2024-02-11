@@ -11,10 +11,10 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse " id="navbarText">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="#" style={{ color: "white" }}>Home</a>
+                                <a className="nav-link active" aria-current="page" href="/" style={{ color: "white" }}>Home</a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#" style={{ color: "white" }}>Task Management</a>
+                                <a className="nav-link" href="task-management" style={{ color: "white" }}>Task Management</a>
                             </li>
                         </ul>
                         <span className="navbar-text" style={{ color: "white" }}>

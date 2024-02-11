@@ -56,22 +56,22 @@ const Footer = () => {
                         <div className="text-center text-md-right">
                             <ul className="list-unstyled list-inline">
                                 <li className="list-inline-item">
-                                    <a href="#" className="btn-floating btn-sm text-white" style={{fontSize: "23px"}}>
+                                    <a href="https://www.facebook.com/" className="btn-floating btn-sm text-white" style={{fontSize: "23px"}}>
                                         <i className="fab fa-facebook"></i>
                                     </a>
                                 </li>
                                 <li className="list-inline-item">
-                                    <a href="#" className="btn-floating btn-sm text-white" style={{fontSize: "23px"}}>
+                                    <a href="https://www.twitter.com/" className="btn-floating btn-sm text-white" style={{fontSize: "23px"}}>
                                         <i className="fab fa-twitter"></i>
                                     </a>
                                 </li>
                                 <li className="list-inline-item">
-                                    <a href="#" className="btn-floating btn-sm text-white" style={{fontSize: "23px"}}>
+                                    <a href="https://www.linkedin.com/" className="btn-floating btn-sm text-white" style={{fontSize: "23px"}}>
                                         <i className="fab fa-linkedin-in"></i>
                                     </a>
                                 </li>
                                 <li className="list-inline-item">
-                                    <a href="#" className="btn-floating btn-sm text-white" style={{fontSize: "23px"}}>
+                                    <a href="https://www.youtube.com/" className="btn-floating btn-sm text-white" style={{fontSize: "23px"}}>
                                         <i className="fab fa-youtube"></i>
                                     </a>
                                 </li>
